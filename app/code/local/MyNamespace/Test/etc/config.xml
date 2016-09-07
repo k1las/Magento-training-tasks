@@ -5,7 +5,15 @@
             <version>0.0.1</version>
         </MyNamespace_Test>
     </modules>
-
+    <global>
+        <resources>
+            <mynamespacetest_setup>
+                <setup>
+                    <module>MyNamespace_Test</module>
+                </setup>
+            </mynamespacetest_setup>
+        </resources>
+    </global>
     <frontend>
         <layout>
             <updates>
