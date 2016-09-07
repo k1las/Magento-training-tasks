@@ -53,13 +53,6 @@ Supported layout update handles (special):
                 </action>
             </reference>
         </customer_logged_in>
-
-        <test_greeting_view>
-            <action method="setTemplate">
-                <template>greeting/view.phtml</template>
-            </action>
-        </test_greeting_view>
-
     </default>
     <mynamespace_test_greeting_view>
         <reference name="content">

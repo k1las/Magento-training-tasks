@@ -1,0 +1,13 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_additional_index>
+        <reference name="content">
+            <block type="mynamespace_test/adminhtml_additional" name="additional" />
+        </reference>
+    </adminhtml_additional_index>
+    <adminhtml_additional_edit>
+        <reference name="content">
+            <block type="mynamespace_test/adminhtml_additional_edit" name="additional_edit" />
+        </reference>
+    </adminhtml_additional_edit>
+</layout>

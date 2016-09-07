@@ -2,9 +2,9 @@
 <config>
     <menu>
         <mynamespace_test>
-            <title>Test test</title>
+            <title>Additional menu item</title>
             <sort_order>15</sort_order>
-            <action>adminhtml/test</action>
+            <action>adminhtml/Additional</action>
         </mynamespace_test>
     </menu>
 

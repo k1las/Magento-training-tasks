@@ -2,7 +2,7 @@
 <config>
     <modules>
         <MyNamespace_Test>
-            <version>0.0.1</version>
+            <version>0.0.2</version>
         </MyNamespace_Test>
     </modules>
 
@@ -18,9 +18,6 @@
                     <config>MyNamespace_Test_Model_Catalog_Config</config>
                 </rewrite>
             </catalog>
-            <mynamespace_test>
-                <class>MyNamespace_Test_Model</class>
-            </mynamespace_test>
             <test>
                 <class>MyNamespace_Test_Model</class>
                 <resourceModel>test_resource</resourceModel>
@@ -31,6 +28,9 @@
                     <test>
                         <table>test</table>
                     </test>
+                    <additional>
+                        <table>additional_info</table>
+                    </additional>
                 </entities>
             </test_resource>
         </models>
@@ -116,7 +116,7 @@
         <layout>
             <updates>
                 <mynamespace_test>
-                    <file>mynamespace/test.xml</file>
+                    <file>mynamespace/additional.xml</file>
                 </mynamespace_test>
             </updates>
         </layout>
