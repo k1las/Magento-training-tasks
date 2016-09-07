@@ -5,7 +5,52 @@
             <version>0.0.1</version>
         </MyNamespace_Test>
     </modules>
+
     <global>
+        <models>
+            <mynamespace_test>
+                <class>MyNamespace_Test_Model</class>
+            </mynamespace_test>
+            <test>
+                <class>MyNamespace_Test_Model</class>
+                <resourceModel>test_resource</resourceModel>
+            </test>
+            <test_resource>
+                <class>MyNamespace_Test_Model_Resource</class>
+                <entities>
+                    <test>
+                        <table>test</table>
+                    </test>
+                </entities>
+            </test_resource>
+        </models>
+        <events>
+            <customer_login>
+                <observers>
+                    <mynamespace_test_model_observer>
+                        <type>singleton</type>
+                        <class>mynamespace_test/observer</class>
+                        <method>customerLogin</method>
+                    </mynamespace_test_model_observer>
+                </observers>
+            </customer_login>
+            <customer_logout>
+                <observers>
+                    <mynamespace_test_model_observer>
+                        <type>singleton</type>
+                        <class>mynamespace_test/observer</class>
+                        <method>customerLogout</method>
+                    </mynamespace_test_model_observer>
+                </observers>
+            </customer_logout>
+        </events>
+        <blocks />
+        <extraconfig />
+        <helpers>
+            <test>
+                <class>MyNamespace_Test_Helper</class>
+            </test>
+        </helpers>
         <resources>
             <mynamespacetest_setup>
                 <setup>
@@ -14,6 +59,40 @@
             </mynamespacetest_setup>
         </resources>
     </global>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <MyNamespace_Test before="Mage_Adminhtml">MyNamespace_Test_Adminhtml</MyNamespace_Test>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+    <!--<admin>-->
+    <!--<routers>-->
+    <!--<adminhtml>-->
+    <!--<args>-->
+    <!--<modules>-->
+    <!--<Apeware_Cck before="Mage_Adminhtml">Apeware_Cck_Adminhtml</Apeware_Cck>-->
+    <!--</modules>-->
+    <!--</args>-->
+    <!--</adminhtml>-->
+    <!--</routers>-->
+    <!--</admin>-->
+    <!--<admin>-->
+    <!--<routers>-->
+    <!--<mynamespace_test>-->
+    <!--<use>admin</use>-->
+    <!--<args>-->
+    <!--<module>MyNamespace_Test</module>-->
+    <!--<frontName>test</frontName>-->
+    <!--</args>-->
+    <!--</mynamespace_test>-->
+    <!--</routers>-->
+    <!--</admin>-->
+
     <frontend>
         <layout>
             <updates>
@@ -31,5 +110,6 @@
                 </args>
             </mynamespace_test>
         </routers>
+
     </frontend>
 </config>
