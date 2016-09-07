@@ -8,6 +8,11 @@
 
     <global>
         <models>
+            <catalog>
+                <rewrite>
+                    <product>MyNamespace_Test_Model_Product</product>
+                </rewrite>
+            </catalog>
             <mynamespace_test>
                 <class>MyNamespace_Test_Model</class>
             </mynamespace_test>
@@ -24,6 +29,13 @@
                 </entities>
             </test_resource>
         </models>
+        <blocks>
+            <catalogsearch>
+                <rewrite>
+                    <result>MyNamespace_Test_Block_Result</result>
+                </rewrite>
+            </catalogsearch>
+        </blocks>
         <events>
             <customer_login>
                 <observers>
@@ -70,28 +82,6 @@
             </adminhtml>
         </routers>
     </admin>
-    <!--<admin>-->
-    <!--<routers>-->
-    <!--<adminhtml>-->
-    <!--<args>-->
-    <!--<modules>-->
-    <!--<Apeware_Cck before="Mage_Adminhtml">Apeware_Cck_Adminhtml</Apeware_Cck>-->
-    <!--</modules>-->
-    <!--</args>-->
-    <!--</adminhtml>-->
-    <!--</routers>-->
-    <!--</admin>-->
-    <!--<admin>-->
-    <!--<routers>-->
-    <!--<mynamespace_test>-->
-    <!--<use>admin</use>-->
-    <!--<args>-->
-    <!--<module>MyNamespace_Test</module>-->
-    <!--<frontName>test</frontName>-->
-    <!--</args>-->
-    <!--</mynamespace_test>-->
-    <!--</routers>-->
-    <!--</admin>-->
 
     <frontend>
         <layout>
@@ -102,6 +92,13 @@
             </updates>
         </layout>
         <routers>
+            <catalogsearch>
+                <use>standard</use>
+                <args>
+                    <module>MyNamespace_Test</module>
+                    <frontName>catalogsearch</frontName>
+                </args>
+            </catalogsearch>
             <mynamespace_test>
                 <use>standard</use>
                 <args>

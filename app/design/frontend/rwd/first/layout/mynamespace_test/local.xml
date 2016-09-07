@@ -55,4 +55,12 @@ Supported layout update handles (special):
         </customer_logged_in>
 
     </default>
+    <catalog_search_result>
+        <reference name="catalog.search.result">
+            <action method="setTemplate">
+                <template>mynamespace_test/catalog/search/result.phtml</template>
+            </action>
+
+        </reference>
+    </catalog_search_result>
 </layout>
