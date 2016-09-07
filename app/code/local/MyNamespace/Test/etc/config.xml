@@ -13,6 +13,11 @@
                     <product>MyNamespace_Test_Model_Product</product>
                 </rewrite>
             </catalog>
+            <catalog>
+                <rewrite>
+                    <config>MyNamespace_Test_Model_Catalog_Config</config>
+                </rewrite>
+            </catalog>
             <mynamespace_test>
                 <class>MyNamespace_Test_Model</class>
             </mynamespace_test>
@@ -35,6 +40,11 @@
                     <result>MyNamespace_Test_Block_Result</result>
                 </rewrite>
             </catalogsearch>
+            <catalog>
+                <rewrite>
+                    <product_list_toolbar>MyNamespace_Test_Block_Product_List_Toolbar</product_list_toolbar>
+                </rewrite>
+            </catalog>
         </blocks>
         <events>
             <customer_login>
