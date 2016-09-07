@@ -1,0 +1,27 @@
+<?xml version="1.0" ?>
+<config>
+    <modules>
+        <MyNamespace_Test>
+            <version>0.0.1</version>
+        </MyNamespace_Test>
+    </modules>
+
+    <frontend>
+        <layout>
+            <updates>
+                <mynamespace_test>
+                    <file>mynamespace_test.xml</file>
+                </mynamespace_test>
+            </updates>
+        </layout>
+        <routers>
+            <mynamespace_test>
+                <use>standard</use>
+                <args>
+                    <module>MyNamespace_Test</module>
+                    <frontName>test</frontName>
+                </args>
+            </mynamespace_test>
+        </routers>
+    </frontend>
+</config>
