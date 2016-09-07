@@ -1,0 +1,58 @@
+<?xml version="1.0" ?>
+<config>
+    <tabs>
+        <testconfig translate="label" module="mynamespace_test">
+            <label>Test Config</label>
+            <sort_order>10</sort_order>
+        </testconfig>
+    </tabs>
+    <sections>
+        <test_options translate="label" module="mynamespace_test">
+            <label>Test Config Options</label>
+            <tab>testconfig</tab>
+            <frontend_type>text</frontend_type>
+            <sort_order>1000</sort_order>
+            <show_in_default>1</show_in_default>
+            <show_in_website>1</show_in_website>
+            <show_in_store>1</show_in_store>
+            <groups>
+                <messages translate="label">
+                    <label>Config items</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>1</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <test_text>
+                            <label>Text</label>
+                            <frontend_type>text</frontend_type>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </test_text>
+                        <test_dropdown>
+                            <label>Dropdown</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>mynamespace_test/select</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </test_dropdown>
+                        <test_multiselect>
+                            <label>Multiselect</label>
+                            <frontend_type>multiselect</frontend_type>
+                            <source_model>mynamespace_test/multiselect</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>1</show_in_store>
+                        </test_multiselect>
+                    </fields>
+                </messages>
+            </groups>
+        </test_options>
+    </sections>
+</config>

@@ -54,13 +54,32 @@ Supported layout update handles (special):
             </reference>
         </customer_logged_in>
 
+        <test_greeting_view>
+            <action method="setTemplate">
+                <template>greeting/view.phtml</template>
+            </action>
+        </test_greeting_view>
+
     </default>
+    <mynamespace_test_greeting_view>
+        <reference name="content">
+            <block type="mynamespace_test/greeting" as="special_offer_product"
+                   name="special.offer.product"
+                   template="greeting/view.phtml" />
+        </reference>
+    </mynamespace_test_greeting_view>
     <catalog_search_result>
         <reference name="catalog.search.result">
             <action method="setTemplate">
-                <template>mynamespace_test/catalog/search/result.phtml</template>
+                <template>catalog/search/result.phtml</template>
             </action>
-
         </reference>
     </catalog_search_result>
+    <catalog_product_view>
+        <reference name="product.info.extrahint">
+            <block before="true" type="mynamespace_test/specialOffer_specialOffer" as="special_offer_product"
+                   name="special.offer.product"
+                   template="specialoffer/specialoffer.phtml" />
+        </reference>
+    </catalog_product_view>
 </layout>

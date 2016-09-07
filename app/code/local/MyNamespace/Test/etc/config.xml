@@ -45,6 +45,9 @@
                     <product_list_toolbar>MyNamespace_Test_Block_Product_List_Toolbar</product_list_toolbar>
                 </rewrite>
             </catalog>
+            <mynamespace_test>
+                <class>MyNamespace_Test_Block</class>
+            </mynamespace_test>
         </blocks>
         <events>
             <customer_login>
@@ -66,12 +69,10 @@
                 </observers>
             </customer_logout>
         </events>
-        <blocks />
-        <extraconfig />
         <helpers>
-            <test>
+            <mynamespace_test>
                 <class>MyNamespace_Test_Helper</class>
-            </test>
+            </mynamespace_test>
         </helpers>
         <resources>
             <mynamespacetest_setup>
@@ -81,18 +82,6 @@
             </mynamespacetest_setup>
         </resources>
     </global>
-    <admin>
-        <routers>
-            <adminhtml>
-                <args>
-                    <modules>
-                        <MyNamespace_Test before="Mage_Adminhtml">MyNamespace_Test_Adminhtml</MyNamespace_Test>
-                    </modules>
-                </args>
-            </adminhtml>
-        </routers>
-    </admin>
-
     <frontend>
         <layout>
             <updates>
@@ -102,13 +91,6 @@
             </updates>
         </layout>
         <routers>
-            <catalogsearch>
-                <use>standard</use>
-                <args>
-                    <module>MyNamespace_Test</module>
-                    <frontName>catalogsearch</frontName>
-                </args>
-            </catalogsearch>
             <mynamespace_test>
                 <use>standard</use>
                 <args>
@@ -117,6 +99,28 @@
                 </args>
             </mynamespace_test>
         </routers>
-
     </frontend>
+    <admin>
+        <routers>
+            <adminhtml>
+                <args>
+                    <modules>
+                        <mynamespace_test before="Mage_Adminhtml">MyNamespace_Test_Adminhtml</mynamespace_test>
+                    </modules>
+                </args>
+            </adminhtml>
+        </routers>
+    </admin>
+
+    <adminhtml>
+        <layout>
+            <updates>
+                <mynamespace_test>
+                    <file>mynamespace/test.xml</file>
+                </mynamespace_test>
+            </updates>
+        </layout>
+    </adminhtml>
+
+
 </config>

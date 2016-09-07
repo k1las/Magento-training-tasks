@@ -1,0 +1,33 @@
+<?xml version="1.0" ?>
+<config>
+    <menu>
+        <mynamespace_test>
+            <title>Test test</title>
+            <sort_order>15</sort_order>
+            <action>adminhtml/test</action>
+        </mynamespace_test>
+    </menu>
+
+    <acl>
+        <resources>
+            <all>
+                <title>Allow Everything</title>
+            </all>
+            <admin>
+                <children>
+                    <system>
+                        <children>
+                            <config>
+                                <children>
+                                    <test_options>
+                                        <title>MyNamespace - All</title>
+                                    </test_options>
+                                </children>
+                            </config>
+                        </children>
+                    </system>
+                </children>
+            </admin>
+        </resources>
+    </acl>
+</config>
