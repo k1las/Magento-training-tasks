@@ -1,0 +1,7 @@
+.idea
+app/etc/local.xml
+media/catalog/
+var/cache/
+var/full_page_cache/
+var/report/
+var/session/
