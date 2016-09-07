@@ -18,7 +18,7 @@
         <layout>
             <updates>
                 <mynamespace_test>
-                    <file>mynamespace_test.xml</file>
+                    <file>mynamespace_test/local.xml</file>
                 </mynamespace_test>
             </updates>
         </layout>
