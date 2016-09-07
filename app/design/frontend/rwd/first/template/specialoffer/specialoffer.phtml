@@ -1,0 +1,15 @@
+<?php $specialProduct = $this->getSpecialProduct() ?>
+<?php if (!$this->isCurrentProductSpecial($specialProduct)): ?>
+<?php $helper = $this->helper('catalog/output'); ?>
+<div >
+    <div class="add-to-cart" style="border: solid red 3px">
+        <h3>SPECIAL OFFER!</h3>
+        <div class="product-name">
+            <h1><?php echo $helper->productAttribute($specialProduct, $specialProduct->getName(), 'name') ?></h1>
+            <div class="short-description">
+                <div class="std"><?php echo $helper->productAttribute($specialProduct, nl2br($specialProduct->getShortDescription()), 'short_description') ?></div>
+                <a class="widget-product-link" href="<?php echo $specialProduct->getProductUrl() ?>">Read more</a>
+            </div>
+        </div>
+    </div>
+    <?php endif; ?>

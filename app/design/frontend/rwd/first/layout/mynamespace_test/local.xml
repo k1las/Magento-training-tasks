@@ -58,9 +58,15 @@ Supported layout update handles (special):
     <catalog_search_result>
         <reference name="catalog.search.result">
             <action method="setTemplate">
-                <template>mynamespace_test/catalog/search/result.phtml</template>
+                <template>catalog/search/result.phtml</template>
             </action>
-
         </reference>
     </catalog_search_result>
+    <catalog_product_view>
+        <reference name="product.info.extrahint">
+            <block before="true" type="mynamespace_test/specialOffer_specialOffer" as="special_offer_product"
+                   name="special.offer.product"
+                   template="specialoffer/specialoffer.phtml" />
+        </reference>
+    </catalog_product_view>
 </layout>

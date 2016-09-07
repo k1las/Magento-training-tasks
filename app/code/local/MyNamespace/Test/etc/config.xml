@@ -45,6 +45,9 @@
                     <product_list_toolbar>MyNamespace_Test_Block_Product_List_Toolbar</product_list_toolbar>
                 </rewrite>
             </catalog>
+            <mynamespace_test>
+                <class>MyNamespace_Test_Block</class>
+            </mynamespace_test>
         </blocks>
         <events>
             <customer_login>
@@ -117,6 +120,5 @@
                 </args>
             </mynamespace_test>
         </routers>
-
     </frontend>
 </config>
