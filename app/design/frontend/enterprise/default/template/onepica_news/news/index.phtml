@@ -1,0 +1,17 @@
+<?php $news = $this->getNews() ?>
+<?php if ($news->count() >= 1): ?>
+    <?php foreach ($news as $post): ?>
+        <div style="border: solid black 3px">
+            <h1><?php echo $post->getTitle() ?></h1>
+            <div>
+                <pre><?php echo $post->getIntro() ?></pre>
+            </div>
+            <div>
+                <a href="/onepica/news/view/id/<?php echo $post->getId() ?>">Read more</a>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <?php echo $this->getChildHtml('pager') ?>
+<?php else: ?>
+        <h1 align="center">No news</h1>
+<?php endif; ?>

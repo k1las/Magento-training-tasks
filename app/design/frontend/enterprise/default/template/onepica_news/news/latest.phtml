@@ -1,0 +1,17 @@
+<?php if ($this->getConfigHelper()->getNewsConfigFieldValue('news_show_for_customer') && $this->getConfigHelper()->getNewsConfigFieldValue('latest_news_block_show')): ?>
+    <div class="block block-poll">
+        <div class="block-title">
+            <h1>News</h1>
+        </div>
+        <div class="block-content">
+            <ul>
+                <?php foreach ($this->getLatestNews() as $post): ?>
+                    <li>
+                        <a href="/onepica/news/view/id/<?php echo $post->getId(); ?>"><?php echo $post->getTitle(); ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <a href="/onepica/news">View all</a>
+        </div>
+    </div>
+<?php endif; ?>

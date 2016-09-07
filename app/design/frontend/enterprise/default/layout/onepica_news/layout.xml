@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="right">
+            <block type="onepica_news/news" name="latest.news" as="latest_news"
+                   template="onepica_news/news/latest.phtml" />
+        </reference>
+    </default>
+    <onepica_news_news_index>
+        <reference name="right">
+            <remove name="latest.news" />
+        </reference>
+        <reference name="content">
+            <block type="onepica_news/news" name="view.post" as="view_post" template="onepica_news/news/index.phtml" />
+        </reference>
+    </onepica_news_news_index>
+
+    <onepica_news_news_view>
+        <reference name="right">
+            <remove name="latest.news" />
+        </reference>
+        <reference name="content">
+            <block type="onepica_news/news_view" name="view.post" as="view_post"
+                   template="onepica_news/news/view.phtml" />
+        </reference>
+    </onepica_news_news_view>
+</layout>
