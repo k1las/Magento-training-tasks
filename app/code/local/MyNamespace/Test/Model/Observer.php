@@ -6,18 +6,18 @@
 class MyNamespace_Test_Model_Observer
 {
     /**Customer login observer
-     * @param Mage_Reports_Model_Event_Observer $Observer
+     * @param Varien_Event_Observer $observer
      */
-    public function customerLogin($Observer)
+    public function customerLogin(Varien_Event_Observer $observer)
     {
-        Mage::getModel('test/test')->trackCustomer($Observer->getCustomer(),'login');
+        Mage::getModel('test/test')->trackCustomer($observer->getCustomer(),'login');
     }
 
     /**Customer logout observer
-     * @param Mage_Reports_Model_Event_Observer $Observer
+     * @param Varien_Event_Observer $observer
      */
-    public function customerLogout($Observer)
+    public function customerLogout(Varien_Event_Observer $observer)
     {
-        Mage::getModel('test/test')->trackCustomer($Observer->getCustomer(),'logout');
+        Mage::getModel('test/test')->trackCustomer($observer->getCustomer(),'logout');
     }
 }
