@@ -1,0 +1,17 @@
+<?php $posts = $this->getPosts() ?>
+<?php if ($posts->count() >= 1): ?>
+    <?php foreach ($posts as $post): ?>
+        <div style="border: solid black 3px">
+            <h1><?php echo $post->getTitle() ?></h1>
+            <div>
+                <pre><?php echo $post->getIntro() ?></pre>
+            </div>
+            <div>
+                <a href="/blog/index/view/id/<?php echo $post->getId() ?>">Read more</a>
+            </div>
+        </div>
+    <?php endforeach; ?>
+    <?php echo $this->getChildHtml('pager') ?>
+<?php else: ?>
+        <h1 align="center">No posts</h1>
+<?php endif; ?>

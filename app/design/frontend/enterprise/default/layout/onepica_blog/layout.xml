@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+        <reference name="right">
+            <block type="onepica_blog/posts_latest" name="latest.posts" as="latest_posts"
+                   template="onepica_blog/blog/latest.phtml" />
+            <block type="onepica_blog/tagsCloud" name="blog.tags.cloud" as="blog_tags_cloud"
+                   template="onepica_blog/tagcloud.phtml" />
+        </reference>
+        <reference name="footer">
+            <block type="onepica_blog/posts_latest" name="latest.posts"
+                   template="onepica_blog/blog/latest.phtml" />
+        </reference>
+    </default>
+    <onepica_blog_index_index>
+        <reference name="right">
+            <remove name="latest.posts" />
+        </reference>
+        <reference name="content">
+            <block type="onepica_blog/posts" name="view.blog.posts" as="view_posts"
+                   template="onepica_blog/blog/index.phtml">
+            </block>
+        </reference>
+    </onepica_blog_index_index>
+
+    <onepica_blog_index_view>
+        <reference name="right">
+            <remove name="latest.posts" />
+        </reference>
+        <reference name="content">
+            <block type="onepica_blog/posts_view" name="view.blog.post" as="view_post"
+                   cache_life_time="86000" template="onepica_blog/blog/view.phtml">
+                <action method="setCacheLifetime">
+                    <lifetime>3600</lifetime>
+                </action>
+            </block>
+        </reference>
+    </onepica_blog_index_view>
+
+    <catalogsearch_result_index>
+        <reference name="search.result">
+            <action method="setTemplate">
+                <template>/onepica_blog/blog/catalogsearch/result.phtml</template>
+            </action>
+            <block type="onepica_blog/posts" name="view.blog.posts" as="view_posts"
+                   template="onepica_blog/blog/index.phtml">
+            </block>
+        </reference>
+    </catalogsearch_result_index>
+</layout>

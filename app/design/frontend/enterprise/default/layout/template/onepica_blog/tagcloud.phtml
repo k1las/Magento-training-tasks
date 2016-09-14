@@ -1,0 +1,16 @@
+<div class="h1">
+    <h1 style="text-align:center; color: #<?php echo $this->getDataHelper()->getRandomColor() ?>"><?php echo $this->__('Tags Cloud') ?></h1>
+</div>
+<?php if ($this->getTags()->count() > 0): ?>
+    <ul class="tags-list">
+        <?php foreach ($this->getTags() as $tag): ?>
+            <?php if ($this->getRequest()->get('tagId') !== $tag->getId()): ?>
+                <li><a href="/catalogsearch/result?q=<?php echo str_replace('#', '%23', $tag->getName()) ?>"
+                       style="color: #<?php echo $this->getDataHelper()->getRandomColor() ?>"><?php echo $this->getDataHelper()->getTransformedText($tag->getName()) ?></a>
+                </li>
+            <?php endif; ?>
+        <?php endforeach; ?>
+    </ul>
+<?php else: ?>
+    <p class="note-msg"><?php echo $this->__('There are no tags available.') ?></p>
+<?php endif; ?>

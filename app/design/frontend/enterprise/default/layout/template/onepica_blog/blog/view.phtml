@@ -1,0 +1,19 @@
+<?php $post = $this->getPost(); ?>
+<div class="category-view">
+    <div class="category-description std"><h1><?php echo $this->__($post->getTitle()) ?></h1></div>
+    <div class="category-products">
+        <?php echo $this->__($post->getPostContent()); ?>
+    </div>
+    <?php $tags = $this->getTags(); if ($tags->count() > 0): ?>
+            <h3 style="border-top: solid 2px">Tags:</h3>
+        <ul class="tags-list">
+            <?php foreach ($tags as $tag): ?>
+                    <li><a href="/catalogsearch/result?q=<?php echo str_replace('#', '%23', $tag->getName()) ?>"
+                           style="color: #<?php echo $this->getDataHelper()->getRandomColor() ?>"><?php echo $this->getDataHelper()->getTransformedText($tag->getName()) ?></a>
+                    </li>
+            <?php endforeach; ?>
+        </ul>
+    <?php else: ?>
+    <?php endif; ?>
+</div>
+

@@ -1,0 +1,17 @@
+<?php if ($this->getConfigHelper()->getBlogConfigFieldValue('posts_show_for_customer') && $this->getConfigHelper()->getBlogConfigFieldValue('latest_posts_block_show')): ?>
+    <div class="block block-poll">
+        <div class="block-title">
+            <h1>Posts</h1>
+        </div>
+        <div class="block-content">
+            <ul>
+                <?php foreach ($this->getLatestPosts() as $post): ?>
+                    <li>
+                        <a href="/blog/index/view/id/<?php echo $post->getId(); ?>"><?php echo $post->getTitle(); ?></a>
+                    </li>
+                <?php endforeach; ?>
+            </ul>
+            <a href="/blog">View all</a>
+        </div>
+    </div>
+<?php endif; ?>

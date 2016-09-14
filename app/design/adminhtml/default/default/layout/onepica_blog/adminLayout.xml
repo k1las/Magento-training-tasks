@@ -1,0 +1,43 @@
+<?xml version="1.0"?>
+<layout>
+    <adminhtml_blog_index>
+        <reference name="content">
+            <block type="onepica_blog/adminhtml_posts" name="posts" />
+        </reference>
+    </adminhtml_blog_index>
+    <adminhtml_blog_edit>
+        <update handle="editor"/>
+        <reference name="head">
+            <action method="setCanLoadTinyMce"><load>1</load></action>
+            <action method="addItem">
+                <type>js</type>
+                <name>onepica/news/edit-form-admin.js</name>
+            </action>
+        </reference>
+        <reference name="left">
+            <block type="onepica_blog/adminhtml_posts_edit_tabs" name="onepica_blog_edit_tabs">
+                <block type="onepica_blog/adminhtml_posts_edit_tab_newsInfo"
+                       name="onepica_blog_edit_tab_newsInfo" />
+                <action method="addTab">
+                    <name>info_section</name>
+                    <block>onepica_blog/adminhtml_posts_edit_tab_newsInfo</block>
+                </action>
+                <block type="onepica_blog/adminhtml_posts_edit_tab_newsPublishingOptions"
+                       name="onepica_blog_edit_tab_newsPublishingOptions" />
+                <action method="addTab">
+                    <name>publishing_section</name>
+                    <block>onepica_blog/adminhtml_posts_edit_tab_newsPublishingOptions</block>
+                </action>
+                <block type="onepica_blog/adminhtml_posts_edit_tab_newsSeoOptions"
+                       name="onepica_blog_edit_tab_newsSepOptions" />
+                <action method="addTab">
+                    <name>seo_section</name>
+                    <block>onepica_blog/adminhtml_posts_edit_tab_newsSeoOptions</block>
+                </action>
+            </block>
+        </reference>
+        <reference name="content">
+            <block type="onepica_blog/adminhtml_posts_edit" name="onepica_blog_adminhtml_posts_edit" />
+        </reference>
+    </adminhtml_blog_edit>
+</layout>

@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<config>
+        <placeholders>
+            <onepica_blog_posts_latest>
+                <block>onepica_blog/posts_latest</block>
+                <placeholder>ONEPICA_BLOG_POSTS_LATEST</placeholder>
+                <container>OnePica_Blog_Model_Container_Posts_Latest</container>
+            </onepica_blog_posts_latest>
+        </placeholders>
+</config>
