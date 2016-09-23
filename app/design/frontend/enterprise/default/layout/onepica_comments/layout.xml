@@ -1,0 +1,38 @@
+<?xml version="1.0"?>
+<layout version="0.1.0">
+    <default>
+
+    </default>
+    <onepica_blog_index_view>
+        <reference name="head">
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/onepica/jquery/jquery.js</script>
+            </action>
+            <action method="addItem">
+                <type>skin_js</type>
+                <script>js/onepica/comments/load-comments.js</script>
+            </action>
+        </reference>
+
+        <reference name="content">
+            <block type="comments/comments" name="view.blog.comments"
+                   template="onepica_comments/list.phtml">
+                <block type="comments/comments_comment" name="comments.item"
+                       as="comments_item" template="onepica_comments/comment.phtml" />
+            </block>
+            <block type="comments/comments_form" name="comments.form"
+                   template="onepica_comments/form.phtml">
+                <block type="comments/comments_form_nameInput" name="name.input" as="name_input"
+                       template="onepica_comments/form/nameinput.phtml" />
+            </block>
+        </reference>
+    </onepica_blog_index_view>
+
+    <comments_index_load>
+        <block type="comments/comments" name="load.comments" as="load_comments"
+               template="onepica_comments/load.phtml">
+            <block type="comments/comments_comment" name="comments.item" as="comments_item" template="onepica_comments/comment.phtml" />
+        </block>
+    </comments_index_load>
+</layout>

@@ -1,0 +1,6 @@
+<?php $comments = $this->getComments();?>
+<?php if ($comments->count() > 0): ?>
+    <?php foreach ($comments as $comment): ?>
+        <?php echo $this->getChild('comments_item')->setModel($comment)->_toHtml() ?>
+    <?php endforeach; ?>
+<?php endif; ?>

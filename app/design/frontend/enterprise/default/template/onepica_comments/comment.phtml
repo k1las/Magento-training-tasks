@@ -1,0 +1,7 @@
+<?php $model = $this->getModel()?>
+<div class="comment-<?php $model->getId() ?>" style="border-top: 1px solid black">
+    <p>
+        Author: <?php echo(!empty($model->getName()) ? $model->getName() : $model->getAuthor()->getName()) ?></p>
+    <p>Created: <?php echo $model->getCreatedAt() ?></p>
+    <p><?php echo $model->getText() ?></p>
+</div>

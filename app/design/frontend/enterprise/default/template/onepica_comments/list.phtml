@@ -1,0 +1,21 @@
+<?php $comments = $this->getComments();
+$lastPage = $comments->getLastPageNumber()
+?>
+<script type="text/javascript">
+    var lastPage = <?php echo $lastPage?>,
+            postId = <?php echo $this->getRequest()->get('id')?>;
+</script>
+<?php if ($comments->count() > 0): ?>
+    <div class="comments" style="margin-top: 30px; border: solid 2px grey">
+        <h1 align="center">Comments</h1>
+        <?php foreach ($comments as $comment): ?>
+            <?php echo $this->getChild('comments_item')->setModel($comment)->toHtml() ?>
+        <?php endforeach; ?>
+    </div>
+    <?php if ($lastPage > 1): ?>
+        <button class="load-more"
+                style="border-color:grey; background-color:dimgray; color: white; width:80px; height: 40px; display:block; margin-top: 5px; margin-left: auto; margin-right: auto">
+            Load more
+        </button>
+    <?php endif; ?>
+<?php endif; ?>

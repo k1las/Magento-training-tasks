@@ -1,0 +1,23 @@
+<?xml version="1.0"?>
+<layout>
+    <default>
+
+    </default>
+    <adminhtml_comments_index>
+        <reference name="content">
+            <block type="comments/adminhtml_comments" name="comments" />
+        </reference>
+    </adminhtml_comments_index>
+
+    <adminhtml_comments_edit>
+        <update handle="editor" />
+        <reference name="head">
+            <action method="setCanLoadTinyMce">
+                <load>1</load>
+            </action>
+        </reference>
+        <reference name="content">
+            <block type="comments/adminhtml_comments_edit" name="comments_adminhtml_comments_edit" />
+        </reference>
+    </adminhtml_comments_edit>
+</layout>

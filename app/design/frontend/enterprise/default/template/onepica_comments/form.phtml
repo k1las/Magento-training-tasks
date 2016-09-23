@@ -1,0 +1,22 @@
+<?php echo $this->getMessagesBlock()->toHtml() ?>
+<div style="margin-top: 50px">
+    <form id="comment-form" action="/comments/index/new" method="post">
+        <div style="display: block; margin-left: auto; margin-right: auto;">
+            <input type="hidden" name="post_id" value="<?php echo $this->getRequest()->get('id') ?>">
+            <?php echo $this->getChildHtml('name_input') ?>
+            <textarea style="width: 500px;display: block; margin-left: auto; margin-right: auto;" rows="10" name="text"
+                      id="textarea"
+                      class="textarea required-entry validate-no-html-tags"></textarea>
+
+            <input type="submit"
+                   style="color:white;background-color:#1e75b4;width:80px; height:35px;display: block; margin-left: auto; margin-right: auto;"
+                   name="submit" value="<?php echo $this->__('Submit') ?>"/>
+        </div>
+    </form>
+</div>
+
+<script type="text/javascript">
+    //< ![CDATA[
+    var commentForm = new VarienForm('comment-form');
+    //]]>
+</script>
